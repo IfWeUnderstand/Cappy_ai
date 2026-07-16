@@ -95,3 +95,114 @@ ${BLAS.allowedActions.join("\n")}
 `;
 
 }
+<script>
+
+// ======================================
+// B.L.A.S.
+// B.R.I.A.N. Link Action System
+// ======================================
+
+
+const BLAS = {
+
+name:
+"B.R.I.A.N. Link Action System",
+
+version:
+"1.0",
+
+status:
+"CONNECTED",
+
+linkStrength:
+100,
+
+
+permissions:[
+
+"walk",
+"calculate",
+"remember",
+"learn",
+"command"
+
+]
+
+};
+
+
+
+// CONNECT TO BRIAN
+
+function connectBrian(){
+
+return `
+
+B.L.A.S CONNECTION
+
+SYSTEM:
+${BLAS.name}
+
+VERSION:
+${BLAS.version}
+
+STATUS:
+${BLAS.status}
+
+LINK:
+${BLAS.linkStrength}%
+
+`;
+
+}
+
+
+
+// ACTION CONTROL
+
+function controlBrian(action){
+
+
+if(
+BLAS.permissions.includes(action)
+){
+
+return:
+
+"B.R.I.A.N. action approved: "
++action;
+
+
+}
+
+
+return:
+
+"B.L.A.S blocked action.";
+
+}
+
+
+
+// STATUS
+
+function blasStatus(){
+
+return `
+
+B.L.A.S STATUS
+
+STATUS:
+${BLAS.status}
+
+AUTHORIZED ACTIONS:
+
+${BLAS.permissions.join("\n")}
+
+`;
+
+}
+
+
+
+</script>
