@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>CAPPY_AI_COMPLETE</title>
+
+<meta charset="UTF-8">
+
+
+<style>
+
+body {
+
+background:#0000AA;
+color:#AAAAAA;
+font-family:"Courier New", monospace;
+font-weight:bold;
+padding:20px;
+margin:0;
+
+}
+
+
+#app {
+
+max-width:1000px;
+margin:auto;
+
+}
+
+
+.header {
+
+color:white;
+font-size:26px;
+border-bottom:3px double white;
+padding-bottom:10px;
+
+}
+
+
+.box {
+
+background:black;
+border:3px solid white;
+padding:20px;
+margin-top:20px;
+
+}
+
+
+#chat {
+
+height:350px;
+overflow-y:auto;
+white-space:pre-wrap;
+
+}
+
+
+.user {
+
+color:#55FFFF;
+
+}
+
+
+.cappy {
+
+color:white;
+
+}
+
+
+input {
+
+background:black;
+color:white;
+border:2px solid white;
+padding:10px;
+width:70%;
+font-family:"Courier New";
+
+}
+
+
+button {
+
+background:#0000AA;
+color:white;
+border:2px solid white;
+padding:10px;
+font-family:"Courier New";
+font-weight:bold;
+
+}
+
+
+button:hover {
+
+background:white;
+color:#0000AA;
+
+}
+
+
+/* CAPPY BODY */
+
+
+#cappyBody {
+
+text-align:center;
+font-size:50px;
+color:white;
+
+}
+
+
+.leg {
+
+display:inline-block;
+margin:20px;
+font-size:35px;
+
+}
+
+
+
+.status {
+
+color:#55FFFF;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div id="app">
+
+
+
+<div class="header">
+
+CAPPY_AI (3)
+
+<br>
+
+B.R.I.A.N. + ACTION CORE
+
+</div>
+
+
+
+<div class="box">
+
+
+<div id="cappyBody">
+
+
+▲
+
+<br>
+
+█ CAPPY █
+
+<br>
+
+╱ ╲
+
+
+<br>
+
+
+<span class="leg">
+▐
+</span>
+
+<span class="leg">
+▌
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="box">
+
+
+<div id="chat">
+
+CAPPY_AI:
+
+BOOTING SYSTEM...
+
+
+<br><br>
+
+
+B.R.I.A.N.
+
+Binary Reasoning Intelligence Assistance Network
+
+
+<br><br>
+
+
+ACTION SYSTEM:
+
+LEGS ONLINE
+
+
+</div>
+
+
+
+<br>
+
+
+<input id="input"
+placeholder="ENTER COMMAND">
+
+
+<button onclick="send()">
+
+SEND
+
+</button>
+
+
+</div>
+
+
+
+
+<div class="box status">
+
+
+SYSTEMS:
+
+<br><br>
+
+BODY:
+ONLINE
+
+<br>
+
+LEGS:
+ONLINE
+
+<br>
+
+BRAIN:
+B.R.I.A.N.
+
+<br>
+
+MODE:
+OFFLINE CORE
+
+
+</div>
+
+
+
+
+<div class="box">
+
+
+CAPPY AI (3) is an artificial intelligence system.
+
+<br><br>
+
+CAPPY AI can make mistakes.
+
+<br><br>
+
+© If We Understand™
+<span id="year"></span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+// COPYRIGHT YEAR
+
+document.getElementById("year").innerHTML =
+new Date().getFullYear();
+
+
+
+
+// ==========================
+// B.R.I.A.N.
+// ==========================
+
+
+const BRIAN = {
+
+
+name:
+
+"Binary Reasoning Intelligence Assistance Network",
+
+
+version:
+
+"3.0",
+
+
+memory:[],
+
+
+lessons:[]
+
+
+};
+
+
+
+
+// ==========================
+// LEGS SYSTEM
+// ==========================
+
+
+const LEGS = {
+
+
+status:"ONLINE",
+
+
+actions:[
+
+"CALCULATE",
+
+"SEARCH",
+
+"REMEMBER",
+
+"LEARN",
+
+"COMMAND"
+
+]
+
+
+};
+
+
+
+
+// ==========================
+// MEMORY
+// ==========================
+
+
+function remember(message){
+
+BRIAN.memory.push(message);
+
+}
+
+
+
+
+// ==========================
+// MATH
+// ==========================
+
+
+function calculate(text){
+
+
+let expression =
+text.replace(/[^0-9+\-*/().^]/g,"");
+
+
+if(expression==="")
+return null;
+
+
+
+try{
+
+
+expression =
+expression.replace("^","**");
+
+
+return Function(
+"return "+expression
+)();
+
+
+}
+
+catch(e){
+
+return null;
+
+}
+
+
+}
+
+
+
+
+// ==========================
+// BRAIN
+// ==========================
+
+
+function think(input){
+
+
+let text =
+input.toLowerCase();
+
+
+remember(input);
+
+
+
+if(text.includes("hello")
+||
+text.includes("hi")){
+
+return "Hello. CAPPY AI is online.";
+
+}
+
+
+
+if(text=="status"){
+
+return `
+
+CAPPY STATUS
+
+BRAIN:
+${BRIAN.name}
+
+VERSION:
+${BRIAN.version}
+
+LEGS:
+${LEGS.status}
+
+MEMORY:
+${BRIAN.memory.length}
+
+`;
+
+}
+
+
+
+let math =
+calculate(text);
+
+
+
+if(math!==null){
+
+return "RESULT: "+math;
+
+}
+
+
+
+return "BRIAN: Processing incomplete.";
+
+}
+
+
+
+
+// ==========================
+// CHAT
+// ==========================
+
+
+function send(){
+
+
+let input =
+document.getElementById("input").value;
+
+
+let chat =
+document.getElementById("chat");
+
+
+
+chat.innerHTML +=
+
+"<br><span class='user'>USER: "
++input+
+"</span><br>";
+
+
+
+let reply =
+think(input);
+
+
+
+chat.innerHTML +=
+
+"<span class='cappy'>CAPPY_AI: "
++reply+
+"</span><br>";
+
+
+
+document.getElementById("input").value="";
+
+
+chat.scrollTop =
+chat.scrollHeight;
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>// ==========================
+// B.R.I.A.N. MEMORY STORAGE
+// ==========================
+
+function saveMemory(){
+
+localStorage.setItem(
+"CAPPY_BRIAN_MEMORY",
+JSON.stringify(BRIAN.memory)
+);
+
+}
+
+
+function loadMemory(){
+
+let saved =
+localStorage.getItem(
+"CAPPY_BRIAN_MEMORY"
+);
+
+
+if(saved){
+
+BRIAN.memory =
+JSON.parse(saved);
+
+}
+
+}
+
+
+loadMemory();
+
+
+
+// ==========================
+// LEARNING SYSTEM
+// ==========================
+
+function learn(data){
+
+let parts =
+data.split("=");
+
+
+if(parts.length < 2){
+
+return "BRIAN: Learning format is LEARN topic=information";
+
+}
+
+
+let topic =
+parts[0]
+.replace("learn","")
+.trim();
+
+
+let info =
+parts[1]
+.trim();
+
+
+BRIAN.lessons.push({
+
+topic:topic,
+info:info
+
+});
+
+
+saveMemory();
+
+
+return "BRIAN learned: "+topic;
+
+}
+
+
+
+
+function recall(text){
+
+for(let lesson of BRIAN.lessons){
+
+
+if(text.includes(
+lesson.topic.toLowerCase()
+)){
+
+
+return lesson.info;
+
+
+}
+
+}
+
+
+return null;
+
+}
+
+
+
+// ==========================
+// PERSONALITY CORE
+// ==========================
+
+
+function personality(text){
+
+
+if(text.includes("thank")){
+
+return "You are welcome. B.R.I.A.N. has completed the task.";
+
+}
+
+
+
+if(text.includes("who made you")){
+
+return "I was designed as CAPPY AI (3), powered by the B.R.I.A.N. Core.";
+
+}
+
+
+
+if(text.includes("are you alive")){
+  return: " Define Alive.";
+
+}
+
+
+
+return null;
+
+}
+
+
+
+
+// ==========================
+// THINKING ANIMATION
+// ==========================
+
+
+function thinking(){
+
+let chat =
+document.getElementById("chat");
+
+
+chat.innerHTML +=
+
+"<span class='cappy'>BRIAN: Thinking...</span><br>";
+
+}// ==========================
+// COMMAND SYSTEM
+// ==========================
+
+
+function commandSystem(text){
+
+
+if(text=="about"){
+
+return `
+
+CAPPY AI (3)
+
+B.R.I.A.N.
+
+${BRIAN.name}
+
+VERSION:
+${BRIAN.version}
+
+`;
+
+}
+
+
+
+if(text=="memory"){
+
+return `
+
+MEMORY STORAGE:
+
+Messages:
+${BRIAN.memory.length}
+
+Lessons:
+${BRIAN.lessons.length}
+
+`;
+
+}
+
+
+
+if(text=="developer"){
+
+return `
+
+DEVELOPER MODE
+
+ACCESS:
+GRANTED
+
+SYSTEMS:
+ONLINE
+
+`;
+
+}
+
+
+
+if(text=="legs"){
+
+return `
+
+ACTION CORE
+
+LEGS STATUS:
+${LEGS.status}
+
+AVAILABLE ACTIONS:
+
+${LEGS.actions.join("\n")}
+
+`;
+
+}
+
+
+
+return null;
+
+}
+
+
+
+
+// ==========================
+// PLUGIN SYSTEM
+// ==========================
+
+
+const PLUGINS = [];
+
+
+function installPlugin(name){
+
+
+PLUGINS.push(name);
+
+
+return "Plugin installed: "+name;
+
+}
+
+
+
+function pluginStatus(){
+
+
+return `
+
+PLUGINS:
+
+${PLUGINS.length}
+
+${PLUGINS.join("\n")}
+
+`;
+
+}// ==========================
+// MODE SYSTEM
+// ==========================
+
+
+let CAPPY_MODE =
+"OFFLINE";
+
+
+
+function setMode(mode){
+
+
+if(mode=="online"){
+
+CAPPY_MODE="ONLINE";
+
+return "Online mode enabled.";
+
+}
+
+
+CAPPY_MODE="OFFLINE";
+
+return "Offline mode enabled.";
+
+}
+
+
+
+
+function apiStatus(){
+
+return `
+
+AI CONNECTION:
+
+MODE:
+${CAPPY_MODE}
+
+API:
+${CAPPY_MODE=="ONLINE"?
+"CONNECTED":
+"NOT CONNECTED"}
+
+`;
+
+}function think(input){
+
+
+let text =
+input.toLowerCase();
+
+
+remember(input);
+
+saveMemory();
+
+
+
+if(text.startsWith("learn ")){
+
+return learn(input);
+
+}
+
+
+
+let command =
+commandSystem(text);
+
+
+if(command){
+
+return command;
+
+}
+
+
+
+if(text=="online"
+||
+text=="offline"){
+
+return setMode(text);
+
+}
+
+
+
+if(text=="api"){
+
+return apiStatus();
+
+}
+
+
+
+let memory =
+recall(text);
+
+
+if(memory){
+
+return memory;
+
+}
+
+
+
+let personalityReply =
+personality(text);
+
+
+if(personalityReply){
+
+return personalityReply;
+
+}
+
+
+
+if(text.includes("reiser")){
+
+return `
+
+REISER SYSTEM DATABASE
+
+Creator:
+Noah Reiser
+
+Rules:
+
+1. Cannot become smaller.
+2. Continuously expands.
+3. Uses custom layers and operators.
+4. Designed for huge finite numbers.
+
+STATUS:
+EXPANDING
+
+`;
+
+}
+
+
+
+let math =
+calculate(text);
+
+
+
+if(math!==null){
+
+return "BRIAN CALCULATION RESULT: "+math;
+
+}
+
+
+
+return "BRIAN: I need more information.";
+
+}
