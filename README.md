@@ -1,4 +1,3 @@
-# Cappy_ai
 # CAPPY AI (3)
 
 A custom AI assistant project.
