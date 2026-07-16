@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>CAPPY_AI_CORE</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+body {
+
+background:#0000AA;
+color:#AAAAAA;
+font-family:"Courier New", monospace;
+font-weight:bold;
+padding:20px;
+margin:0;
+
+}
+
+
+#app {
+
+max-width:1000px;
+margin:auto;
+
+}
+
+
+.header {
+
+color:white;
+font-size:25px;
+border-bottom:3px double white;
+padding-bottom:10px;
+
+}
+
+
+.box {
+
+background:black;
+border:3px solid white;
+padding:20px;
+margin-top:20px;
+
+}
+
+
+#chat {
+
+height:350px;
+overflow-y:auto;
+white-space:pre-wrap;
+
+}
+
+
+.user {
+
+color:#55FFFF;
+
+}
+
+
+.cappy {
+
+color:white;
+
+}
+
+
+input {
+
+background:black;
+color:white;
+border:2px solid white;
+padding:10px;
+font-family:"Courier New";
+width:70%;
+
+}
+
+
+button {
+
+background:#0000AA;
+color:white;
+border:2px solid white;
+padding:10px;
+font-family:"Courier New";
+
+}
+
+
+button:hover {
+
+background:white;
+color:#0000AA;
+
+}
+
+
+.menu {
+
+color:#55FFFF;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="app">
+
+
+<div class="header">
+
+CAPPY_AI (3)
+
+<br>
+
+B.R.I.A.N. CORE SYSTEM
+
+</div>
+
+
+
+<div class="box">
+
+
+<div id="chat">
+
+CAPPY_AI:
+
+System initialized.
+
+<br><br>
+
+B.R.I.A.N.
+
+Binary Reasoning Intelligence Assistance Network
+
+<br><br>
+
+STATUS:
+ONLINE
+
+<br>
+
+MODE:
+OFFLINE CORE
+
+</div>
+
+
+<br>
+
+
+<input id="input"
+placeholder="ENTER COMMAND">
+
+
+<button onclick="send()">
+SEND
+</button>
+
+
+</div>
+
+
+
+<div class="box">
+
+<span class="menu">
+AVAILABLE SYSTEMS
+</span>
+
+<br><br>
+
+HELP
+
+<br>
+STATUS
+
+<br>
+VERSION
+
+<br>
+MEMORY
+
+<br>
+REISER SYSTEM
+
+<br>
+LEARN
+
+<br>
+ABOUT
+
+<br>
+CLEAR
+
+</div>
+
+
+
+<div class="box">
+
+
+CAPPY AI (3) is an artificial intelligence system.
+
+<br><br>
+
+CAPPY AI can make mistakes.
+
+<br><br>
+
+Always verify important information.
+
+<br><br>
+
+© If We Understand™ 
+<span id="year"></span>
+
+
+</div>
+
+
+
+</div>
+
+
+
+<script>
+
+
+// =====================
+// B.R.I.A.N. CORE
+// =====================
+
+
+const BRIAN = {
+
+
+name:
+"Binary Reasoning Intelligence Assistance Network",
+
+
+version:
+"2.0",
+
+
+mode:
+"OFFLINE",
+
+
+memory:[],
+
+
+lessons:[]
+
+
+};
+
+
+
+// =====================
+// YEAR
+// =====================
+
+
+document.getElementById("year").innerHTML =
+new Date().getFullYear();
+
+
+
+
+// =====================
+// MEMORY
+// =====================
+
+
+function remember(text){
+
+BRIAN.memory.push(text);
+
+
+if(BRIAN.memory.length>100){
+
+BRIAN.memory.shift();
+
+}
+
+
+}
+
+
+
+
+// =====================
+// MATH
+// =====================
+
+
+function math(text){
+
+
+let expression =
+text.replace(/[^0-9+\-*/().^]/g,"");
+
+
+if(expression=="")
+return null;
+
+
+
+try{
+
+
+expression =
+expression.replace("^","**");
+
+
+return Function(
+"return "+expression
+)();
+
+
+
+}
+
+catch(e){
+
+return null;
+
+}
+
+
+}
+
+
+
+
+// =====================
+// REISER DATABASE
+// =====================
+
+
+function reiser(){
+
+
+return `
+
+REISER SYSTEM DATABASE
+
+
+Creator:
+Noah Reiser
+
+
+Type:
+Custom large-number system
+
+
+Rules:
+
+1. System cannot become smaller.
+
+2. System expands continuously.
+
+3. Uses custom layers and operators.
+
+4. Explores extremely large finite numbers.
+
+
+STATUS:
+
+EXPANDING
+
+`;
+
+}
+
+
+
+
+
+// =====================
+// BRIAN THINKING
+// =====================
+
+
+function think(input){
+
+
+let text =
+input.toLowerCase();
+
+
+
+remember(input);
+
+
+
+if(text=="help"){
+
+return `
+
+CAPPY COMMANDS:
+
+STATUS
+
+VERSION
+
+MEMORY
+
+REISER SYSTEM
+
+ABOUT
+
+CLEAR
+
+`;
+
+}
+
+
+
+if(text=="status"){
+
+return `
+
+B.R.I.A.N STATUS
+
+
+NAME:
+
+${BRIAN.name}
+
+
+VERSION:
+
+${BRIAN.version}
+
+
+MODE:
+
+${BRIAN.mode}
+
+
+MEMORY:
+
+${BRIAN.memory.length} messages
+
+
+`;
+
+}
+
+
+
+if(text.includes("reiser")){
+
+return reiser();
+
+}
+
+
+
+if(text.includes("who are you")
+||
+text.includes("about")){
+
+
+return `
+
+CAPPY AI (3)
+
+
+Internal Brain:
+
+B.R.I.A.N.
+
+
+${BRIAN.name}
+
+
+VERSION:
+
+${BRIAN.version}
+
+`;
+
+}
+
+
+
+
+let answer =
+math(text);
+
+
+
+if(answer!==null){
+
+return
+"BRIAN CALCULATION RESULT: "+answer;
+
+}
+
+
+
+if(text.includes("hello")
+||
+text.includes("hi")){
+
+return
+"Hello. CAPPY_AI is online.";
+
+}
+
+
+
+return
+"BRIAN: No offline data found.";
+
+}
+
+
+
+
+// =====================
+// CHAT
+// =====================
+
+
+function send(){
+
+
+let input =
+document.getElementById("input").value;
+
+
+let chat =
+document.getElementById("chat");
+
+
+
+chat.innerHTML +=
+
+"<br><span class='user'>USER: "
++input+
+"</span><br>";
+
+
+
+let reply =
+think(input);
+
+
+
+chat.innerHTML +=
+
+"<span class='cappy'>CAPPY_AI: "
++reply+
+"</span><br>";
+
+
+
+document.getElementById("input").value="";
+
+
+chat.scrollTop =
+chat.scrollHeight;
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
