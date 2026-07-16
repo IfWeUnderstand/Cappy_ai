@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>CAPPY_AI SETTINGS</title>
+
+<meta charset="UTF-8">
+
+<style>
+
+body {
+
+background:#0000AA;
+color:white;
+font-family:"Courier New", monospace;
+font-weight:bold;
+padding:20px;
+
+}
+
+
+.box {
+
+background:black;
+border:3px solid white;
+padding:20px;
+max-width:800px;
+margin:auto;
+
+}
+
+
+button,input,select {
+
+background:black;
+color:white;
+border:2px solid white;
+padding:8px;
+font-family:"Courier New";
+
+}
+
+
+.option {
+
+color:#55FFFF;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="box">
+
+
+<h1>
+CAPPY_AI (3)
+<br>
+SYSTEM SETTINGS
+</h1>
+
+
+<p class="option">
+DISPLAY
+</p>
+
+
+Theme:
+
+<select id="theme">
+
+<option>
+BSOD BLUE
+</option>
+
+<option>
+BLACK TERMINAL
+</option>
+
+<option>
+WHITE SYSTEM
+</option>
+
+</select>
+
+
+
+<br><br>
+
+
+
+<p class="option">
+B.R.I.A.N. CORE
+</p>
+
+
+Name:
+
+<br>
+
+Binary Reasoning Intelligence Assistance Network
+
+
+<br><br>
+
+
+Version:
+
+<br>
+
+1.0
+
+
+<br><br>
+
+
+Mode:
+
+<br>
+
+OFFLINE CORE
+
+
+<br><br>
+
+
+
+<p class="option">
+AI CONNECTION
+</p>
+
+
+API KEY:
+
+<br>
+
+
+<input 
+type="password"
+placeholder="ENTER KEY">
+
+
+<br><br>
+
+
+<button onclick="save()">
+SAVE SETTINGS
+</button>
+
+
+
+<p id="status"></p>
+
+
+
+<br><br>
+
+
+© If We Understand™
+<span id="year"></span>
+
+
+</div>
+
+
+
+<script>
+
+
+document.getElementById("year").innerHTML =
+new Date().getFullYear();
+
+
+
+function save(){
+
+document.getElementById("status").innerHTML =
+"SETTINGS SAVED.";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
