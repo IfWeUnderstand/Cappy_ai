@@ -1,0 +1,97 @@
+// =================================
+// B.L.A.S.
+// B.R.I.A.N. Link Action System
+// =================================
+
+const BLAS = {
+
+    name: "B.R.I.A.N. Link Action System",
+
+    connected: true,
+
+    strength: 100,
+
+    allowedActions: [
+        "walk",
+        "calculate",
+        "remember",
+        "learn",
+        "command"
+    ]
+
+};
+
+
+// =================================
+// BRIAN WALK CONTROL
+// =================================
+
+function walkBrian(direction){
+
+    if(!BLAS.connected){
+
+        return "B.L.A.S. LINK OFFLINE.";
+
+    }
+
+
+    if(direction=="forward"){
+
+        return "B.R.I.A.N. walked forward.";
+
+    }
+
+
+    if(direction=="back"){
+
+        return "B.R.I.A.N. walked backward.";
+
+    }
+
+
+    if(direction=="left"){
+
+        return "B.R.I.A.N. moved left.";
+
+    }
+
+
+    if(direction=="right"){
+
+        return "B.R.I.A.N. moved right.";
+
+    }
+
+
+    return "B.R.I.A.N. does not know that movement.";
+
+}
+
+
+
+// =================================
+// LEASH STATUS
+// =================================
+
+function leashStatus(){
+
+return `
+
+B.L.A.S. STATUS
+
+SYSTEM:
+${BLAS.name}
+
+CONNECTION:
+${BLAS.connected ? "ACTIVE" : "OFFLINE"}
+
+LINK STRENGTH:
+${BLAS.strength}%
+
+AUTHORIZED ACTIONS:
+
+${BLAS.allowedActions.join("\n")}
+
+`;
+
+}
